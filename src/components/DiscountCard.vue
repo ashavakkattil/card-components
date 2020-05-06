@@ -2,24 +2,15 @@
   <div class="row justify-center">
     <q-card class="my-card" flat bordered>
       <q-img
-        src="https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_1_large.jpeg?v=1427723864"
-        v-show="showImage"
-        @mouseenter="changeImage"
-      >
-        <div class="product-badge">
-          <span class="text-uppercase">new</span>
-        </div>
-      </q-img>
-      <q-img
-        src="https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_2_large.jpeg?v=1427723864"
-        v-show="!showImage"
-        @mouseleave="changeImage"
+        :src="showImage?'https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_1_large.jpeg?v=1427723864': 'https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_2_large.jpeg?v=1427723864'"
+        @mouseleave="showImage = true"
+        @mouseenter="showImage = false"
       >
         <div class="product-badge">
           <span class="text-uppercase">new</span>
         </div>
 
-        <div class="add-to-cart-btn">
+        <div class="add-to-cart-btn" v-show="!showImage">
           <q-btn text color="primary">Add to cart</q-btn>
         </div>
       </q-img>
@@ -42,11 +33,6 @@ export default {
     return {
       showImage: true
     };
-  },
-  methods: {
-    changeImage() {
-      this.showImage = !this.showImage;
-    }
   }
 };
 </script>
