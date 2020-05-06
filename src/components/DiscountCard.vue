@@ -11,7 +11,13 @@
         </div>
 
         <div class="add-to-cart-btn" v-show="!showImage">
-          <q-btn text color="primary">Add to cart</q-btn>
+          <transition
+            appear
+            enter-active-class="animated fadeInDown"
+            leave-active-class="animated fadeInUp"
+          >
+            <q-btn text color="primary">Add to cart</q-btn>
+          </transition>
         </div>
       </q-img>
       <q-card-section class="text-center">
