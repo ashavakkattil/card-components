@@ -3,8 +3,25 @@
     <q-card class="my-card" flat bordered>
       <q-img
         src="https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_1_large.jpeg?v=1427723864"
+        v-show="showImage"
+        @mouseenter="changeImage"
       >
-        <div class="product-badge"><span class="text-uppercase">new</span></div>
+        <div class="product-badge">
+          <span class="text-uppercase">new</span>
+        </div>
+      </q-img>
+      <q-img
+        src="https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_2_large.jpeg?v=1427723864"
+        v-show="!showImage"
+        @mouseleave="changeImage"
+      >
+        <div class="product-badge">
+          <span class="text-uppercase">new</span>
+        </div>
+
+        <div class="add-to-cart-btn">
+          <q-btn text color="primary">Add to cart</q-btn>
+        </div>
       </q-img>
       <q-card-section class="text-center">
         <div class="text-h6">Florida Eco Safari</div>
@@ -19,6 +36,20 @@
     </q-card>
   </div>
 </template>
+<script>
+export default {
+  data() {
+    return {
+      showImage: true
+    };
+  },
+  methods: {
+    changeImage() {
+      this.showImage = !this.showImage;
+    }
+  }
+};
+</script>
 <style lang="scss" scoped>
 .my-card {
   width: 300px;
@@ -27,17 +58,24 @@
     color: grey;
   }
 }
+
 .old-price {
   text-decoration: line-through;
 }
 .product-badge {
-    padding: 5px;
-    width: 156px;
-    text-align: center;
-    transform: rotate(-45deg);
-    position: relative;
-    left: -45px;
-    top: 30px;
-    background-color: #11bf8a
+  padding: 5px;
+  width: 156px;
+  text-align: center;
+  transform: rotate(-45deg);
+  position: relative;
+  left: -45px;
+  top: 30px;
+  background-color: #11bf8a;
+}
+.add-to-cart-btn {
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  background-color: transparent;
 }
 </style>
