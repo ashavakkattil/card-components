@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-card class="shopping-card" flat bordered>
+    <q-card class="shopping-card" flat>
       <div class="cart-image q-mb-lg">
         <q-img
           @mouseenter="showImage = false"
@@ -43,10 +43,10 @@ export default {
 <style lang="scss" scoped>
 .shopping-card {
   width: 300px;
-   border-radius: 50px 50px 0px 0px;
+//    border-radius: 50px 50px 0px 0px;
   .cart-image {
     background-color: #f8f8f8;
-    // border-radius: 50px;
+    border-radius: 50px;
     padding: 20px;
   }
 }
