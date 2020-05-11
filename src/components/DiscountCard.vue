@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-center">
+  <div class="">
     <q-card class="my-card" flat bordered>
       <q-img
         :src="showImage?'https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_1_large.jpeg?v=1427723864': 'https://cdn.shopify.com/s/files/1/0815/1651/products/florida_eco_safari_2_large.jpeg?v=1427723864'"
